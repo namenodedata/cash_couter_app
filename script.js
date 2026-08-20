@@ -6,38 +6,10 @@ const fifty = document.getElementById("note-50");
 const twenty = document.getElementById("note-20");
 const ten = document.getElementById("note-10");
 const five = document.getElementById("note-5");
-const no2words = document.getElement("no-to-words");
-
-
+const no2words = document.getElementById("no-to-words");
 
 // Button event
 document.getElementById("calculate").addEventListener("click", sumOfCash);
-
-
-function sumOfCash() {
-    // Get input values
-    const cash500 = Number(five_hundred.value);
-    const cash200 = Number(two_hundred.value);
-    const cash100 = Number(one_hundred.value);
-    const cash50 = Number(fifty.value);
-    const cash20 = Number(twenty.value);
-    const cash10 = Number(ten.value);
-    const cash5 = Number(five.value);
-
-
-    // Total Amount
-    let total_notes = 0;
-    let total_amount = 0;
-    const amount = document.getElementById("totalAmount");
-    const notes = document.getElementById("totalNotes");
-
-    total_amount = (cash500 * 500) + (cash200 * 200) + (cash100 * 100) + (cash50 * 50) + (cash20 * 20) + (cash10 * 10) + (cash5 * 5);
-    total_notes = Number(cash500 + cash200 + cash100 + cash50 + cash20 + cash10 + cash5);
-    amount.value = Number(total_amount);
-    notes.value = Number(total_notes);
-
-    no2words.textContent = numberToWords(amount);
-}
 
 function numberToWords(num) {
     const ones = [" ", " one ", " two ", " three ", " four ", " five ", " six ", " seven ", " eight ", " nine ", " ten ", " eleven ", " twelve ", " thirteen ", " fourteen ", " fifteen ", " sixteen ", " seventeen ", " eighteen ", " nineteen "];
@@ -85,4 +57,29 @@ function numberToWords(num) {
         words +=" and " + noTowords(paise) + " Paise ";
     }
     return words;
+}
+
+function sumOfCash() {
+    // Get input values
+    const cash500 = Number(five_hundred.value);
+    const cash200 = Number(two_hundred.value);
+    const cash100 = Number(one_hundred.value);
+    const cash50 = Number(fifty.value);
+    const cash20 = Number(twenty.value);
+    const cash10 = Number(ten.value);
+    const cash5 = Number(five.value);
+
+
+    // Total Amount
+    let total_notes = 0;
+    let total_amount = 0;
+    const amount = document.getElementById("totalAmount");
+    const notes = document.getElementById("totalNotes");
+
+    total_amount = (cash500 * 500) + (cash200 * 200) + (cash100 * 100) + (cash50 * 50) + (cash20 * 20) + (cash10 * 10) + (cash5 * 5);
+    total_notes = Number(cash500 + cash200 + cash100 + cash50 + cash20 + cash10 + cash5);
+    amount.value = Number(total_amount);
+    notes.value = Number(total_notes);
+
+    no2words.textContent = numberToWords(Number(total_amount));
 }
