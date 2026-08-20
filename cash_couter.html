@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Tracker</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+		<h1>Cash Tracker</h1>
+      
+<table>
+		<thead>
+			<tr>
+				<th>Cash</th>
+				<th>Count</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span>500</span></td>
+				<td><input type="number" min="1" id="note-500" name="val_cash500"></td>
+			</tr>
+			<tr>
+				<td><span>200</span></td>
+				<td><input type="number" min="1" id="note-200" name="val_cash200"></td>
+			</tr>
+			<tr>
+				<td><span>100</span></td>
+				<td><input type="number" min="1" id="note-100" name="val_cash100"></td>
+			</tr>
+			<tr>
+				<td><span>50</span></td>
+				<td><input type="number" min="1" id="note-50" name="val_cash50"></td>
+			</tr>
+			<tr>
+				<td><span>20</span></td>
+				<td><input type="number" min="1" id="note-20" name="val_cash20"></td>
+			</tr>
+			<tr>
+				<td><span>10</span></td>
+				<td><input type="number" min="1" id="note-10" name="val_cash10"></td>
+			</tr>
+			<tr>
+				<td><span>5</span></td>
+				<td><input type="number" min="1" id="note-5" name="val_cash5"></td>
+			</tr>
+			<tr>
+				<td><h3>Total Amount:</h3></td>
+				<td><input type="number" value="0" id="totalAmount" name="val_total_amount" disabled></td>
+			</tr>
+			<tr>
+				<td><h3>Total Notes:</h3></td>
+				<td><input type="number" value="0" id="totalNotes" name="val_total_notes" disabled></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a id="calculate">Total Amount</a>
+
+     <script src="script.js"></script>
+	</div>
+</body>
+</html>
