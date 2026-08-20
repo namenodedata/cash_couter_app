@@ -6,6 +6,9 @@ const fifty = document.getElementById("note-50");
 const twenty = document.getElementById("note-20");
 const ten = document.getElementById("note-10");
 const five = document.getElementById("note-5");
+const no2words = document.getElement("no-to-words");
+
+
 
 // Button event
 document.getElementById("calculate").addEventListener("click", sumOfCash);
@@ -32,9 +35,20 @@ function sumOfCash() {
     total_notes = Number(cash500 + cash200 + cash100 + cash50 + cash20 + cash10 + cash5);
     amount.value = Number(total_amount);
     notes.value = Number(total_notes);
+
+    no2words.textContent = numberToWords(amount);
 }
 
-function noTowords(n) {
+function numberToWords(num) {
+    const ones = [" ", " one ", " two ", " three ", " four ", " five ", " six ", " seven ", " eight ", " nine ", " ten ", " eleven ", " twelve ", " thirteen ", " fourteen ", " fifteen ", " sixteen ", " seventeen ", " eighteen ", " nineteen "];
+    const tens = [" ", " ", " twenty ", " thirty ", " forty ", " fifty ", " sixty ", " seventy "," eighty "," ninety "];
+    
+    function twoDigits(n){
+        if(n < 20) return ones[n];
+        return tens[Math.floor(n / 10)] + (n % 10 ? "" + ones[n % 10] : "");
+    }
+
+    function noTowords(n) {
         if (n == 0) return "zero";
 
         let result = "";
@@ -62,4 +76,13 @@ function noTowords(n) {
             result += twoDigits(n);
 
         return result.trim();
- }
+    }
+
+    const rupees = Math.floor(num);
+    const paise = Math.round((num - rupees) * 100);
+    let words = noTowords(rupees) + " Rupees ";
+    if(paise > 0){
+        words +=" and " + noTowords(paise) + " Paise ";
+    }
+    return words;
+}
